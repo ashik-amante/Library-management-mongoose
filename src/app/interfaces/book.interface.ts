@@ -1,5 +1,6 @@
+import { Model, Types } from "mongoose";
 
-interface IBook {
+export interface IBook {
         title: string;
         author: string;
         genre: "FICTION"| "NON-FICTION"|"SCIENCE"|"HISTORY"|'BIOGRAPHY'|"FANTASY";
@@ -8,3 +9,7 @@ interface IBook {
         copies: number;
         available: boolean;
     }
+    
+export interface BookStaticMethods extends Model<IBook> {
+    updateAvailability(bookId: Types.ObjectId): Promise<IBook>
+}

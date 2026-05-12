@@ -1,7 +1,8 @@
-import { model, Schema } from "mongoose";
+import { Model, model, Schema } from "mongoose";
+import {   type BookStaticMethods, type IBook } from "../interfaces/book.interface.js";
 
 
-const booksSchema = new Schema({
+const booksSchema = new Schema<IBook, BookStaticMethods>({
     title: {
         type: String,
         required: [true, "Title is required"],
@@ -42,4 +43,14 @@ const booksSchema = new Schema({
 })
 
 
-export const Book = model("Book", booksSchema)  
+
+booksSchema.static("updateAvailability", async function (bookId: Schema.Types.ObjectId) {
+    const book = await this.findById(bookId)
+    if (!book) {
+        throw new Error("Book not found")
+    }
+    book.available = book.copies> 0
+    return book
+    }
+  )
+export const Book = model<IBook, BookStaticMethods>("Book", booksSchema)  

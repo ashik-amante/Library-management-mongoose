@@ -50,6 +50,7 @@ booksSchema.static("updateAvailability", async function (bookId: Schema.Types.Ob
         throw new Error("Book not found")
     }
     book.available = book.copies> 0
+    await book.save()
     return book
     }
   )

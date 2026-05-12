@@ -34,12 +34,12 @@ borrowRouter.post('/', async (req: Request, res: Response) => {
     const borrow = await Borrow.create({
         book: bookId,
         quantity,
-        dueDate: new Date()
+        dueDate: new Date(dueDate)
     })
     // const result = await Borrow.create(req.body)
     res.status(201).json({
         success: true,
-        message: "Borrow created successfully",
+        message: "Book borrowed successfully",
         data: borrow
     })
 })

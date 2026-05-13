@@ -115,14 +115,6 @@ Creates a new book.
 
 ### GET `/api/books`
 
-Supports filtering and sorting.
-
-### Example Query
-
-```bash
-/api/books?filter=SCIENCE&sortBy=createdAt&sort=desc&limit=5
-```
-
 ---
 
 ## Get Book By ID
@@ -192,9 +184,6 @@ Returns aggregated borrowed books summary.
 
 Used to update book availability when copies become zero.
 
-## Middleware
-
-Implemented Mongoose middleware for query/document handling.
 
 ---
 
@@ -222,5 +211,4 @@ The API handles:
 
 # Author
 
-Ashik
-CSE Student
+Abdullah Al Ashik

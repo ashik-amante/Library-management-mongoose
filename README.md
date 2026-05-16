@@ -58,7 +58,7 @@ npm install
 Create a `.env` file in the root directory and add:
 
 ```env
-PORT=5000
+PORT=3000
 DATABASE_URL=your_mongodb_connection_string
 ```
 
@@ -114,14 +114,6 @@ Creates a new book.
 ## Get All Books
 
 ### GET `/api/books`
-
-Supports filtering and sorting.
-
-### Example Query
-
-```bash
-/api/books?filter=SCIENCE&sortBy=createdAt&sort=desc&limit=5
-```
 
 ---
 
@@ -192,9 +184,6 @@ Returns aggregated borrowed books summary.
 
 Used to update book availability when copies become zero.
 
-## Middleware
-
-Implemented Mongoose middleware for query/document handling.
 
 ---
 
@@ -222,5 +211,4 @@ The API handles:
 
 # Author
 
-Ashik
-CSE Student
+Abdullah Al Ashik

@@ -47,6 +47,7 @@ borrowRouter.post('/', async (req: Request, res: Response) => {
         res.status(500).json({
             success: false,
             message: "Internal server error",
+            error
         })
     }
 })
@@ -89,6 +90,7 @@ res.status(200).json({
         res.status(500).json({
             success: false,
             message: "Internal server error",
+            error
         })
     }
 })

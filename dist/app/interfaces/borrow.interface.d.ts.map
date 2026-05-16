@@ -1,0 +1,1 @@
+{"version":3,"file":"borrow.interface.d.ts","sourceRoot":"","sources":["../../../src/app/interfaces/borrow.interface.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,MAAM,EAAE,MAAM,UAAU,CAAC;AAEvC,MAAM,WAAW,OAAO;IACpB,IAAI,EAAE,MAAM,CAAC,KAAK,CAAC,QAAQ,CAAC;IAC5B,QAAQ,EAAE,MAAM,CAAC;IACjB,OAAO,EAAE,IAAI,CAAC;CACjB"}

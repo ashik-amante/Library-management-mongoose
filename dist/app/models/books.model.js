@@ -1,8 +1,6 @@
-import {  model, Schema } from "mongoose";
-import {   type BookStaticMethods, type IBook } from "../interfaces/book.interface.js";
-
-
-const booksSchema = new Schema<IBook, BookStaticMethods>({
+import { model, Schema } from "mongoose";
+import {} from "../interfaces/book.interface.js";
+const booksSchema = new Schema({
     title: {
         type: String,
         required: [true, "Title is required"],
@@ -29,7 +27,7 @@ const booksSchema = new Schema<IBook, BookStaticMethods>({
         required: [true, "Copies is required"],
         min: [0, "Copies must be a non-negative number"],
         validate: {
-            validator: (value: number) => Number.isInteger(value),
+            validator: (value) => Number.isInteger(value),
             message: "Copies must be an integer",
         },
     },
@@ -40,18 +38,15 @@ const booksSchema = new Schema<IBook, BookStaticMethods>({
 }, {
     timestamps: true,
     versionKey: false
-})
-
-
-
-booksSchema.static("updateAvailability", async function (bookId: Schema.Types.ObjectId) {
-    const book = await this.findById(bookId)
+});
+booksSchema.static("updateAvailability", async function (bookId) {
+    const book = await this.findById(bookId);
     if (!book) {
-        throw new Error("Book not found")
+        throw new Error("Book not found");
     }
-    book.available = book.copies> 0
-    await book.save()
-    return book
-    }
-  )
-export const Book = model<IBook, BookStaticMethods>("Book", booksSchema)  
+    book.available = book.copies > 0;
+    await book.save();
+    return book;
+});
+export const Book = model("Book", booksSchema);
+//# sourceMappingURL=books.model.js.map

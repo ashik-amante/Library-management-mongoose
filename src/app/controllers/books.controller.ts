@@ -5,7 +5,6 @@ export const booksRouter = express.Router()
 
 booksRouter.post('/', async (req: Request, res: Response) => {
     try {
-        const data = req.body
     const result = await Book.create(req.body)
     res.status(201).json({
         success: true,

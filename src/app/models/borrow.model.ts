@@ -10,9 +10,9 @@ const borrowSchema = new Schema<IBorrow>({
     },
     quantity: {
         type: Number,
-        min: [0, "Quantity must be greater than 0"],
+        min: [1, "Quantity must be greater than 0"],
         validate: {
-            validator: (value: number) => Number.isInteger(value) && value >= 0,
+            validator: (value: number) => Number.isInteger(value) && value > 0,
         },
         required: true,
     },

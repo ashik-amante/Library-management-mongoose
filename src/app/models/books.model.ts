@@ -49,6 +49,7 @@ booksSchema.static("updateAvailability", async function (bookId: Schema.Types.Ob
     if (!book) {
         throw new Error("Book not found")
     }
+// make true or false using this line,  return true false based on the condition
     book.available = book.copies> 0
     await book.save()
     return book
